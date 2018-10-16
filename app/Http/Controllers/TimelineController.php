@@ -9,7 +9,8 @@ use App\Post;
 class TimelineController extends Controller
 {
     public function getTimeline(){
-        $data['posts'] = Post::all();
-        return $data;
+        //$data['posts'] = Post::all();
+        $posts = DB::select('select * from posts');
+        return $posts;
     }
 }

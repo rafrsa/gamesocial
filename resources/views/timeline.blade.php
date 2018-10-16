@@ -1,9 +1,7 @@
 @if($timeline)
     @foreach($timeline as $key => $value)
-        @foreach($value as $key2 => $value2)
-            <h1>{{$value2->mensagem}}</h1>
-        @endforeach
+        <h1>{{$value->mensagem}}</h1>
     @endforeach
 @else
-    <h1>nao tem</h1>
+    <h1>Sem atividade para exibir!</h1>
 @endif
