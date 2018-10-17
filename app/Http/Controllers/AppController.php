@@ -12,6 +12,7 @@ class AppController extends Controller
     {
         $objTimeline = new TimelineController();
         $data['timeline'] = $objTimeline->getTimeline();
+        //dd($data);
 
         return view('app', $data);
     }

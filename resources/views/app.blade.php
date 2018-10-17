@@ -27,6 +27,8 @@
     {{--<link href="assets/plugins/morris/morris.css" rel="stylesheet" />--}}
     <link href="{{ URL::asset('plugins/scroll-bar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('plugins/iconfonts/plugin.css') }}" rel="stylesheet" />
+
+    <link href="{{ URL::asset('css/timeline.css') }}" rel="stylesheet" />
 </head>
 <body class="">
 <div id="global-loader" ></div>
@@ -227,30 +229,30 @@
         <div class="admin-navbar" id="headerMenuCollapse">
             <div class="container">
                 <ul class="nav">
-                    <li class="nav-item with-sub">
+                    <li class="nav-item">
                         <a class="nav-link active" href="#">
                             <i class="fa fa-home"></i>
                             <span> DASHBOARD</span>
                         </a>
-                        <div class="sub-item">
-                            <ul>
-                                <li>
-                                    <a href="index.html">Dashboard 1</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
-                                <li>
-                                    <a href="index5.html">Dashboard 5</a>
-                                </li>
-                            </ul>
-                        </div><!-- sub-item -->
+                        {{--<div class="sub-item">--}}
+                            {{--<ul>--}}
+                                {{--<li>--}}
+                                    {{--<a href="index.html">Dashboard 1</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="index2.html">Dashboard 2</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="index3.html">Dashboard 3</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="index4.html">Dashboard 4</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="index5.html">Dashboard 5</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                        {{--</div><!-- sub-item -->--}}
                     </li>
                     <li class="nav-item with-sub">
                         <a class="nav-link" href="#"><i class="fa fa-bar-chart"></i> <span>Charts</span></a>
