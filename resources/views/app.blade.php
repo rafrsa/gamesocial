@@ -727,5 +727,7 @@
 
 <script src="{{ URL::asset('js/custom.js') }}"></script>
 
+<script src="{{ URL::asset('js/login.js') }}"></script>
+
 </body>
 </html>
