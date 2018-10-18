@@ -1,5 +1,15 @@
 function efetuaLogin(){
-    window.location = "/dash"
+    alert("Autenticando...");
+    $.ajax({
+        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+        method: "GET",
+        url: "login/auth",
+        data: {
+        }
+    }).done(function( msg ) {
+        alert("Usuário autenticado!");
+        // window.location = "/dash"
+    });
 }
 
 function openPageRegister(){
