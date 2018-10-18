@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Out-2018 às 20:30
+-- Generation Time: 18-Out-2018 às 18:36
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -93,7 +93,9 @@ INSERT INTO `posts` (`id`, `data`, `usuario_id`, `mensagem`) VALUES
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nome` varchar(250) NOT NULL,
-  `imagem` varchar(500) NOT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `senha` varchar(500) NOT NULL,
+  `imagem` varchar(500) DEFAULT NULL,
   `nivel_id` int(11) NOT NULL,
   `data` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -102,8 +104,16 @@ CREATE TABLE `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `imagem`, `nivel_id`, `data`) VALUES
-(1, 'Usuário Teste 1', '', 2, '2018-10-15 04:07:17');
+INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `senha`, `imagem`, `nivel_id`, `data`) VALUES
+(1, 'Usuário Teste 1', 'user1', '202cb962ac59075b964b07152d234b70', '', 2, '2018-10-15 04:07:17'),
+(2, 'rafa', 'rafafre', 'e034fb6b66aacc1d48f445ddfb08da98', NULL, 2, '2018-10-18 13:25:14'),
+(3, 'teste', 'teste', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, '2018-10-18 13:27:30'),
+(4, 'tete', 'tete', '2db313fabca57504d9dc776e46b304f6', NULL, 2, '2018-10-18 13:30:14'),
+(5, 'asd', 'asd', '7815696ecbf1c96e6894b779456d330e', NULL, 2, '2018-10-18 13:32:18'),
+(6, 'iu', 'iu', '9a281eea0823964dfb2915823c248417', NULL, 2, '2018-10-18 13:33:32'),
+(7, 'uyuy', 'yuy', '4336b5054faa60a018471a9972bb2e89', NULL, 2, '2018-10-18 13:34:28'),
+(8, 'asddd', 'asdasd', 'b3ddbc502e307665f346cbd6e52cc10d', NULL, 2, '2018-10-18 13:35:08'),
+(9, 'as', 'as', 'f970e2767d0cfe75876ea857f92e319b', NULL, 2, '2018-10-18 13:35:23');
 
 --
 -- Indexes for dumped tables
@@ -159,7 +169,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

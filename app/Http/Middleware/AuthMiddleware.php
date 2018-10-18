@@ -14,9 +14,10 @@ class AuthMiddleware
 //        if ( !auth()->id() )
 //            dd("nao to logado");
 //            return redirect()->route('login');
-//        if(!session('login')){
-//            return redirect()->route('/');
-//        }
+        $a = session('login');
+        if(!$a){
+            return redirect()->route('login', ["status" => 0]);
+        }
 
 //        $headers = apache_request_headers();
 //

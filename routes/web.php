@@ -2,9 +2,10 @@
 
 Route::get('/', function () {
     return view('login');
-});
+})->name('login');
 
-Route::get('login/auth', 'LoginController@authUser');
+Route::post('login/auth', 'LoginController@authUser');
+Route::post('login/registerUser', 'LoginController@registerUser');
 
 //$router->group(['prefix' => 'login'], function () use ($router) {
 //    $router->get('auth', 'LoginController@authUser');

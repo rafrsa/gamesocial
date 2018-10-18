@@ -13,6 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
@@ -39,6 +40,7 @@
     <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
     <link href="http://demo.geekslabs.com/materialize-v1.0/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="http://demo.geekslabs.com/materialize-v1.0/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="https://pixinvent.com/materialize-material-design-admin-template/vendors/sweetalert/dist/sweetalert.css" type="text/css" rel="stylesheet" media="screen,projection">
 
 </head>
 
@@ -50,7 +52,6 @@
     <div class="loader-section section-right"></div>
 </div>
 <!-- End Page Loading -->
-
 
 
 <div id="login-page" class="row">
@@ -107,24 +108,30 @@
                     <p class="center login-form-text">Registre-se na plataforma</p>
                 </div>
             </div>
+
+
+
             <div class="row margin">
                 <div class="input-field col s12">
-                    <input id="name" type="text">
-                    <label for="first_name">Nome</label>
+                    <input id="registerName" type="text">
+                    <label for="registerName">Nome</label>
                 </div>
             </div>
             <div class="row margin">
                 <div class="input-field col s12">
-                    <input id="email" type="email">
-                    <label for="email">Email</label>
+                    <input id="registerUser" type="text">
+                    <label for="registerUser">Usuário</label>
                 </div>
             </div>
             <div class="row margin">
                 <div class="input-field col s12">
-                    <input id="password" type="password">
-                    <label for="password">Senha</label>
+                    <input id="registerPass" type="password">
+                    <label for="registerPass">Senha</label>
                 </div>
             </div>
+
+
+
             <div class="row">
                 <div class="input-field col s6">
                     <a href="#!" class="btn waves-effect waves-light col s12 cyan" onclick="voltaLogin()">Voltar</a>
@@ -182,12 +189,25 @@
 <!--scrollbar-->
 <script type="text/javascript" src="http://demo.geekslabs.com/materialize-v1.0/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 
+<script type="text/javascript" src="https://pixinvent.com/materialize-material-design-admin-template/vendors/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="https://pixinvent.com/materialize-material-design-admin-template/js/scripts/extra-components-sweetalert.js"></script>
+
 <!--plugins.js - Some Specific JS codes for Plugin Settings-->
 <script type="text/javascript" src="http://demo.geekslabs.com/materialize-v1.0/js/plugins.min.js"></script>
 <!--custom-script.js - Add your own theme custom JS-->
 <script type="text/javascript" src="http://demo.geekslabs.com/materialize-v1.0/js/custom-script.js"></script>
 
 <script src="{{ URL::asset('js/login.js') }}"></script>
+
+@if(isset($_GET['status']) && $_GET['status'] == 0)
+<script>
+    swal("Usuário não logado!")
+</script>
+@elseif(isset($_GET['status']) && $_GET['status'] == 2)
+<script>
+    swal("Usuário não existe!")
+</script>
+@endif
 
 </body>
 
